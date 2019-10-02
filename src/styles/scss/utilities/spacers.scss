@@ -1,0 +1,189 @@
+$container: 150px;
+
+$sides: (
+   top,
+   right,
+   bottom,
+   left
+);
+
+@each $size in $sizes {
+   @each $side in $sides {
+      .p-#{str-slice($side, 0, 1)}-#{$size} {
+         padding-#{$side}: #{$size}px !important;
+      }
+   }
+
+   @each $side in $sides {
+      .m-#{str-slice($side, 0, 1)}-#{$size} {
+          margin-#{$side}: #{$size}px !important;
+      }
+   }
+
+   @each $side in $sides {
+      @media only screen and (max-width: $tablet) {
+         .p-#{str-slice($side, 0, 1)}-#{$size}-mobile {
+            padding-#{$side}: #{$size}px !important;
+        }
+      }
+   }
+
+   @each $side in $sides {
+      @media only screen and (max-width: $tablet) {
+         .m-#{str-slice($side, 0, 1)}-#{$size}-mobile {
+            margin-#{$side}: #{$size}px !important;
+        }
+      }
+   }
+
+   @each $side in $sides {
+      @media only screen and (max-width: $desktop) and (min-width: $tablet) {
+         .m-#{str-slice($side, 0, 1)}-#{$size}-tablet-only {
+            margin-#{$side}: #{$size}px !important;
+        }
+      }
+   }
+
+   @each $side in $sides {
+      @media only screen and (max-width: $desktop) and (min-width: $tablet) {
+         .p-#{str-slice($side, 0, 1)}-#{$size}-tablet-only {
+            padding-#{$side}: #{$size}px !important;
+        }
+      }
+   }
+
+   @each $side in $sides {
+      @media only screen and (min-width: $desktop) {
+         .m-#{str-slice($side, 0, 1)}-#{$size}-desktop {
+            margin-#{$side}: #{$size}px !important;
+        }
+      }
+   }
+
+   @each $side in $sides {
+      @media only screen and (min-width: $desktop) {
+         .p-#{str-slice($side, 0, 1)}-#{$size}-desktop {
+            padding-#{$side}: #{$size}px !important;
+        }
+      }
+   }
+}
+
+.p-b-con-r {
+   padding-bottom: $container !important;
+
+   @media only screen and (max-width: $tablet) {
+      padding-bottom: calc(#{$container} / 2) !important;
+   }
+}
+
+.p-t-con-r {
+   padding-top: $container !important;
+
+   @media only screen and (max-width: $tablet) {
+      padding-top: calc(#{$container} / 2) !important;
+   }
+}
+
+.m-b-con-r {
+   margin-bottom: $container !important;
+
+   @media only screen and (max-width: $tablet) {
+      margin-bottom: calc(#{$container} / 2) !important;
+   }
+}
+
+.m-t-con-r {
+   margin-top: $container !important;
+
+   @media only screen and (max-width: $tablet) {
+      margin-top: calc(#{$container} / 2) !important;
+   }
+}
+
+.has-letterspace-sm { letter-spacing: 1px !important }
+.has-letterspace-md { letter-spacing: 2px !important }
+.has-letterspace-l { letter-spacing: 3px !important }
+
+// change to false if its not imported into bootstrap
+$use-bootstrap: false;
+
+// margin and padding values array
+$space-values : (
+   0,
+   2,
+   4,
+   8,
+   16,
+   24,
+   32,
+   48,
+   64,
+   96,
+   120
+) !default;
+
+// margin and padding shorthands
+$space-prefixes : (
+  p  : padding,
+  pt : padding-top,
+  pr : padding-right,
+  pb : padding-bottom,
+  pl : padding-left,
+  m  : margin,
+  mt : margin-top,
+  mr : margin-right,
+  mb : margin-bottom,
+  ml : margin-left,
+) !default;
+
+// change these values if its not imported into bootstrap
+$grid-breakpoints-custom: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 480px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 1024px,
+  // Widescreen / desktop
+  ws: 1216px,
+  // Extra large screen / wide desktop
+  xl: 1408px
+) !default;
+
+$breakpoints : $grid-breakpoints-custom;
+@if $use-bootstrap {
+  $breakpoints : $grid-breakpoints;
+}
+
+// main function definition
+@mixin make-space($values, $prefixes, $breakpoints) {
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    // if xs value = 0, set it global without media queries
+    @if($breakpoint-value == 0) {
+      @each $attr-short, $attr-long in $prefixes {
+        @each $value in $values {
+          .#{$breakpoint-name}-#{$attr-short}-#{$value} {
+            #{$attr-long}: #{$value}#{'px'};
+          }
+        }
+      }
+    }
+    // breakpoint values that not equal to 0
+    @else {
+      @media screen and (min-width: $breakpoint-value) {
+        @each $attr-short, $attr-long in $prefixes {
+          @each $value in $values {
+            .#{$breakpoint-name}-#{$attr-short}-#{$value} {
+              #{$attr-long}: #{$value}#{'px'};
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include make-space($space-values, $space-prefixes, $breakpoints);

@@ -1,0 +1,49 @@
+{
+  "name": "simple-webpack-config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:dev": "webpack --mode development",
+    "build:prod": "webpack --mode production && npm run purge:css",
+    "start": "webpack-dev-server --mode development",
+    "purge:css": "purgecss --css dist/style.css --content dist/index.html --out dist/ && cssnano dist/style.css > dist/style.min.css"
+  },
+  "keywords": [],
+  "author": "Tomasz Kumiega",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@fullhuman/postcss-purgecss": "^1.2.0",
+    "autoprefixer": "^9.6.0",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.3",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "cssnano-cli": "^1.0.5",
+    "file-loader": "^4.0.0",
+    "glob": "^7.1.4",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss": "^7.0.17",
+    "postcss-loader": "^3.0.0",
+    "purgecss": "^1.3.0",
+    "purgecss-webpack-plugin": "^1.5.0",
+    "resolve-url-loader": "^3.1.0",
+    "sass-loader": "^7.1.0",
+    "scroll-behavior-polyfill": "^2.0.11",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.3",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.1",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "progressbar.js": "^1.0.1"
+  },
+  "description": ""
+}
