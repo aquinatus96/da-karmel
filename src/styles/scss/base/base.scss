@@ -1,27 +1,7 @@
-html {
-  font-size: 62.5%;
-}
-
 body {
   background-color: $clr-black;
-  color: $clr-primary;
-  font-family: $font-text;
 }
 
-span,
-p {
-  font-size: 1.6rem;
-  line-height: 1.333;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $font-primary;
-}
 
 .sr-only {
   border: 0 !important;

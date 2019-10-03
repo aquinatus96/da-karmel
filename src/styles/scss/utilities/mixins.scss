@@ -10,6 +10,12 @@ $desktop: 1024px;
 $widescreen: 1216px;
 $fullhd: 1408px;
 
+@mixin small-mobile {
+  @media screen and (max-width: $phone - 1px) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media screen and (max-width: $tablet - 1px) {
     @content;

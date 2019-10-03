@@ -1,0 +1,24 @@
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  text-transform: uppercase;
+  flex-shrink: 1;
+  font-size: 1.4rem;
+  font-weight: $font-bold;
+  font-family: $font-secondary;
+  letter-spacing: .333px;
+  padding: 1.8rem 4rem;
+
+  &--primary {
+    color: $clr-black;
+    background-color: $clr-primary;
+  }
+
+  &--secondary {
+    background-color: $clr-alfaPrimary;
+  }
+}
