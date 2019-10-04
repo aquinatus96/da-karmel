@@ -1,5 +1,5 @@
 .hero {
-  padding: 2.4rem;
+  padding: $page-padding;
   height: 100vh;
   min-height: 480px;
   display: flex;
@@ -17,10 +17,15 @@
   }
 
   @include small-mobile {
-    background-image: linear-gradient(to top, rgba($clr-black, .85), rgba($clr-black, .85)), url(../../../assets/images/stta.png);
+    background-image: linear-gradient(
+        to top,
+        rgba($clr-black, 0.9),
+        rgba($clr-black, 0.9)
+      ),
+      url(../../../assets/images/stta.png);
     background-size: 250%;
     background-repeat: no-repeat;
-    background-position: 50% 110%;
+    background-position: 50% 60%;
   }
 
   &__heading {

@@ -2,6 +2,10 @@ body {
   background-color: $clr-black;
 }
 
+img {
+  height: auto;
+  width: 100%;
+}
 
 .sr-only {
   border: 0 !important;

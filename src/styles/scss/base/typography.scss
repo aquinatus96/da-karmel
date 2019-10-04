@@ -6,6 +6,10 @@ body {
   background-color: $clr-black;
   color: $clr-primary;
   font-family: $font-text;
+
+  // @include small-mobile {
+  //   text-align: center;
+  // }
 }
 
 span,
@@ -23,6 +27,10 @@ h6 {
   font-family: $font-primary;
 }
 
+h2 {
+  font-size: 2.4rem;
+}
+
 .subtitle {
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -32,8 +40,6 @@ h6 {
   background-color: $clr-alfaPrimary;
 
   @include small-mobile {
-    font-size: 1.333rem;
+    font-size: 1.125rem;
   }
 }
-
-

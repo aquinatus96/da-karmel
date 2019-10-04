@@ -1,0 +1,25 @@
+.section {
+  padding: 6.4rem 2.5rem;
+
+  &-about {
+    position: relative;
+    background-color: $clr-white;
+
+    &__images {
+      display: flex;
+      max-width: 100%;
+    }
+
+    @include small-mobile {
+      &__images {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      &__image {
+        max-height: 50px;
+      }
+    }
+  }
+}
