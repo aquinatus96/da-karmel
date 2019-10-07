@@ -1,0 +1,36 @@
+.groups {
+
+}
+
+.group {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	&__subtitle {
+		text-transform: uppercase;
+		font-size: 1.2rem;
+		letter-spacing: 1px;
+	}
+
+	&__icon {
+		height: 48px;
+		width: 48px;
+
+		&-box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 96px;
+			height: 96px;
+			border-radius: 50%;
+			background-color: $clr-alfaPrimary;
+		}
+
+		path, polygon {
+			fill: $clr-primary;
+		}
+  }
+}

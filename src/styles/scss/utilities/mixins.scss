@@ -3,6 +3,42 @@
   padding-right: $page-padding;
 }
 
+// STYLING MIXINS
+
+// @mixin colorBackgroundImage(
+//   $imagePath,
+//   $direction,
+//   $color,
+//   $colorIntensity,
+//   $color2Intensity: null,
+//   $color2: null
+// ) {
+//   @if $color2Intensity == null and $color2 == null {
+//     background-image: linear-gradient(
+//         $direction,
+//         rgba($color, $colorIntensity),
+//         rgba($color, $colorIntensity)
+//       ),
+//       url($imagePath);
+//   } @else if $color2 == null {
+//     background-image: linear-gradient(
+//         $direction,
+//         rgba($color, $colorIntensity),
+//         rgba($color, $color2Intensity)
+//       ),
+//       url($imagePath);
+//   } @else {
+//     background-image: linear-gradient(
+//         $direction,
+//         rgba($color, $colorIntensity),
+//         rgba($color2, $color2Intensity)
+//       ),
+//       url($imagePath);
+//   }
+// }
+
+// RESPONSIVE MIXINS
+
 $xs-phone: 0;
 $phone: 480px;
 $tablet: 768px;

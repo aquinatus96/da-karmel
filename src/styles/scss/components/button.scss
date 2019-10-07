@@ -4,21 +4,30 @@
 }
 
 .button {
-  display: inline-flex;
+  display: inline-block;
+  position: relative;
   text-transform: uppercase;
   flex-shrink: 1;
   font-size: 1.4rem;
   font-weight: $font-bold;
   font-family: $font-secondary;
-  letter-spacing: .333px;
-  padding: 1.8rem 4rem;
+  letter-spacing: 0.333px;
 
   &--primary {
     color: $clr-black;
     background-color: $clr-primary;
+    padding: 1.8rem 4rem;
   }
 
   &--secondary {
-    background-color: $clr-alfaPrimary;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color: $clr-primary;
+      height: 3px;
+      width: 100%;
+      bottom: -10px;
+    }
   }
 }

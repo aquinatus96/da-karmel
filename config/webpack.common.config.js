@@ -63,17 +63,17 @@ module.exports = {
       }
     ]
   },
-  // devServer: {
-  //     inline: true,
-  //     host: "192.168.43.52" /* my own IP */,
-  //     port: 2137 /* number not string */,
-  //     contentBase: "/",
-  //     overlay: {
-  //         warnings: true,
-  //         errors: true
-  //     },
-  //     clientLogLevel: "error"
-  // },
+  devServer: {
+      inline: true,
+      host: "192.168.43.52" /* my own IP */,
+      port: 2137 /* number not string */,
+      contentBase: "/",
+      overlay: {
+          warnings: true,
+          errors: true
+      },
+      clientLogLevel: "error"
+  },
 
   //  devServer: {
   //      headers: {
