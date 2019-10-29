@@ -1,0 +1,309 @@
+.calendar {
+  &__menu {
+    position: relative;
+    font-family: $font-secondary;
+    font-weight: $font-bold;
+    text-transform: uppercase;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 0 2.1rem;
+    // margin: 0 0 1.6rem 0;
+    border-bottom: 1px solid $clr-grey;
+
+    &-indicator {
+      position: absolute;
+      width: 36px;
+      height: 3px;
+      background-color: $clr-primary;
+      bottom: 0;
+    }
+
+    &-item {
+      border: none;
+      font-size: 1.2rem;
+      letter-spacing: 0.333px;
+      padding: 0.8rem 0;
+      position: relative;
+      transition: transform 0.12s linear;
+
+      &--active {
+        position: relative;
+      }
+
+      &--active::before {
+        content: "";
+        display: block;
+        height: 3px;
+        width: 50%;
+        background-color: $clr-primary;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        animation: slideIn 0.2s ease-out;
+        animation-iteration-count: 1;
+      }
+
+      @include touch {
+        font-size: 1.2rem;
+      }
+
+      @include desktop {
+        font-size: 1.6rem;
+      }
+
+      &:focus {
+        box-shadow: none;
+        outline: none;
+        transform: translateY(-6px);
+      }
+    }
+  }
+
+  &__item {
+    padding: 1.8rem 3rem;
+    background-color: $clr-darkGrey;
+    display: grid;
+    grid-column-gap: 1rem;
+    grid-template-columns: 1fr max-content;
+
+    &:not(:last-of-type) {
+      margin-bottom: 0.5rem;
+    }
+
+    @include small-mobile {
+      padding: 1.2rem 2rem;
+      grid-template-columns: auto 4.8rem;
+    }
+
+    @include widescreen {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  &__date {
+    text-transform: uppercase;
+    [data-date] {
+      font-family: $font-primary;
+    }
+
+    [data-day] {
+      font-size: 1rem;
+    }
+
+    @include small-mobile {
+      [data-date] {
+        font-size: 1rem;
+        margin-right: 8px;
+        order: 0;
+      }
+
+      [data-day] {
+        order: 1;
+      }
+
+      display: flex;
+      margin: 0 0 1.2rem;
+    }
+
+    @include touch {
+      [data-date] {
+        margin: 0 6px 0 0;
+        order: 0;
+      }
+
+      [data-day] {
+        order: 1;
+      }
+
+      display: flex;
+      align-items: baseline;
+      margin: 0 0 1.6rem 0;
+    }
+
+    @include desktop-only {
+      [data-date] {
+        font-size: 1.25rem;
+        margin: 0 0.8rem 0 0;
+        order: 0;
+      }
+
+      [data-day] {
+        order: 1;
+      }
+
+      display: flex;
+      align-items: baseline;
+      margin: 0 0 1.6rem;
+    }
+  }
+
+  &__event {
+    grid-column: 1;
+
+    [data-event-type],
+    [data-event] {
+      text-transform: uppercase;
+      // letter-spacing: 1px;
+    }
+
+    [data-event-type],
+    [data-event] {
+      font-size: 1rem;
+    }
+
+    [data-topic] {
+      font-family: $font-primary;
+      font-weight: $font-bold;
+      font-size: 1.6rem;
+      margin: 0 0 0.5rem 0;
+      max-width: 48ch;
+      // word-wrap: break-word;
+      word-break: break-word;
+
+      @include small-mobile {
+        max-width: 60ch;
+      }
+    }
+
+    @include mobile {
+      grid-column: 1 / span 2;
+    }
+
+    @include widescreen {
+      grid-column: 2;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    grid-column: 3;
+    grid-row: 1 / span 2;
+
+    &:hover::before {
+      display: flex;
+    }
+
+    &::before {
+      content: "Dodaj do kalendarza";
+      display: none;
+      justify-content: center;
+      position: absolute;
+      bottom: 50%;
+      right: 100%;
+      min-width: 12.5rem;
+      padding: 0.75rem;
+      transform-origin: right;
+      transform: translate(-12.5%, 50%);
+      background-color: $clr-primary;
+      color: $clr-black;
+      font-weight: $font-bold;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.333px;
+    }
+
+    img {
+      min-width: 1.6rem;
+      max-width: 2.1rem;
+
+      @include tablet {
+        max-width: 3.6rem;
+      }
+    }
+  }
+
+  &__animation {
+    position: relative;
+    bottom: -1px;
+    display: inline-block;
+    animation: empty 3s ease-in-out infinite;
+    transform-origin: center;
+    line-height: 0;
+  }
+
+  &--empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $clr-alfaPrimary;
+    height: 33vh;
+
+    @include widescreen {
+      height: 50vh;
+    }
+  }
+
+  &__empty-info {
+    font-weight: bold;
+    text-align: center;
+    margin-right: 8px;
+    align-self: stretch;
+    @include touch {
+      font-size: 1.333rem;
+    }
+  }
+
+  &__empty-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+#simplebar {
+  max-height: 60vh;
+  border-bottom: 1px solid $clr-primary;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+
+  @include widescreen {
+    max-height: 70vh;
+  }
+
+  .simplebar-scrollbar::before {
+    background-color: $clr-primary;
+    border-radius: 0;
+  }
+
+  .simplebar-track .simplebar-scrollbar.simplebar-visible:before {
+    opacity: 1;
+  }
+}
+
+@keyframes empty {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: 4px;
+    opacity: 1;
+  }
+}

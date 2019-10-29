@@ -1,69 +1,63 @@
-.has-letterspace-sm { letter-spacing: 1px !important }
-.has-letterspace-md { letter-spacing: 2px !important }
-.has-letterspace-l { letter-spacing: 3px !important }
+.has-letterspace-sm {
+  letter-spacing: 1px !important;
+}
+.has-letterspace-md {
+  letter-spacing: 2px !important;
+}
+.has-letterspace-l {
+  letter-spacing: 3px !important;
+}
 
 // change to false if its not imported into bootstrap
 $use-bootstrap: false;
 
 // margin and padding values array
-$space-values : (
-   0,
-   2,
-   4,
-   8,
-   16,
-   24,
-   32,
-   48,
-   64,
-   96,
-   120
-) !default;
+$space-values: (0, 2, 4, 8, 16, 24, 32, 48, 64, 96, 120, 160) !default;
 
 // margin and padding shorthands
-$space-prefixes : (
-  p  : padding,
-  pt : padding-top,
-  pr : padding-right,
-  pb : padding-bottom,
-  pl : padding-left,
-  m  : margin,
-  mt : margin-top,
-  mr : margin-right,
-  mb : margin-bottom,
-  ml : margin-left,
+$space-prefixes: (
+  p: padding,
+  pt: padding-top,
+  pr: padding-right,
+  pb: padding-bottom,
+  pl: padding-left,
+  m: margin,
+  mt: margin-top,
+  mr: margin-right,
+  mb: margin-bottom,
+  ml: margin-left
 ) !default;
 
 // change these values if its not imported into bootstrap
 $grid-breakpoints-custom: (
   // Extra small screen / phone
-  xs: 0,
+    xs: 0,
   // Small screen / phone
-  sm: 480px,
+    sm: $phone,
   // Medium screen / tablet
-  md: 768px,
+    md: $tablet,
   // Large screen / desktop
-  lg: 1024px,
+    lg: $desktop,
   // Widescreen / desktop
-  ws: 1216px,
+    ws: $widescreen,
   // Extra large screen / wide desktop
-  xl: 1408px
+    xl: $fullhd
 ) !default;
 
-$breakpoints : $grid-breakpoints-custom;
+$breakpoints: $grid-breakpoints-custom;
 @if $use-bootstrap {
-  $breakpoints : $grid-breakpoints;
+  $breakpoints: $grid-breakpoints;
 }
 
 // main function definition
 @mixin make-space($values, $prefixes, $breakpoints) {
   @each $breakpoint-name, $breakpoint-value in $breakpoints {
     // if xs value = 0, set it global without media queries
-    @if($breakpoint-value == 0) {
+    @if ($breakpoint-value == 0) {
       @each $attr-short, $attr-long in $prefixes {
         @each $value in $values {
           .#{$breakpoint-name}-#{$attr-short}-#{$value} {
-            #{$attr-long}: #{$value}#{'px'};
+            #{$attr-long}: #{$value}#{"px"} !important;
           }
         }
       }
@@ -74,7 +68,7 @@ $breakpoints : $grid-breakpoints-custom;
         @each $attr-short, $attr-long in $prefixes {
           @each $value in $values {
             .#{$breakpoint-name}-#{$attr-short}-#{$value} {
-              #{$attr-long}: #{$value}#{'px'};
+              #{$attr-long}: #{$value}#{"px"} !important;
             }
           }
         }

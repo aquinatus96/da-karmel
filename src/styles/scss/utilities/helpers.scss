@@ -1,9 +1,7 @@
-.is-flex-mobile {
-   @media only screen and (max-width: $tablet) {
-      display: flex !important;
-   }
+.has-text-bold {
+  font-weight: bold;
 }
 
 .has-margin-center {
-   margin: 0 auto;
+  margin: 0 auto;
 }

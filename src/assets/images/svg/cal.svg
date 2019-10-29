@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 195.9 250" style="enable-background:new 0 0 195.9 250;" xml:space="preserve">
+	 width="283.46px" height="425.201px" viewBox="0 0 283.46 425.201" enable-background="new 0 0 283.46 425.201"
+	 xml:space="preserve">
 <g id="XMLID_87_">
-	<path id="XMLID_95_" d="M169.6,22.5V0h-32.4v22.5H58.8V0H26.4v22.5H0v31.5v15.3V250h195.9V69.4V54.1V22.5H169.6z M178.4,232.4H17.6
-		V71.6h160.8V232.4z"/>
-	<polygon id="XMLID_99_" points="85.8,193.7 110.1,193.7 110.1,164.2 139.6,164.2 139.6,139.9 110.1,139.9 110.1,110.4 85.8,110.4 
-		85.8,139.9 56.3,139.9 56.3,164.2 85.8,164.2 	"/>
+	<path id="XMLID_95_" fill="#FFAE3D" d="M245.405,64.287V31.73h-46.882v32.557H85.082V31.73H38.2v32.557H0v45.579v22.139V393.47
+		h283.46V132.149V110.01V64.287H245.405z M258.138,368.004H25.466V135.332h232.672V368.004L258.138,368.004z"/>
+	<polygon id="XMLID_99_" fill="#FFAE3D" points="124.149,312.007 159.31,312.007 159.31,269.321 201.996,269.321 201.996,234.16 
+		159.31,234.16 159.31,191.474 124.149,191.474 124.149,234.16 81.464,234.16 81.464,269.321 124.149,269.321 	"/>
 </g>
 </svg>

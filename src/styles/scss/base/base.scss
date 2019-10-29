@@ -1,5 +1,10 @@
 body {
   background-color: $clr-black;
+  overflow-x: hidden;
+}
+
+main {
+  // scroll-snap-type: y mandatory;
 }
 
 img {
@@ -19,4 +24,30 @@ img {
   position: absolute !important;
   width: 1px !important;
   white-space: nowrap !important; /* 3 */
+}
+
+// * {
+//   outline: 1px solid red;
+// }
+
+hr {
+  margin: 0.8rem 0;
+  color: $clr-alfaPrimary;
+  width: 80%;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: $clr-white;
+  background: $clr-black;
+}
+
+::selection {
+  color: $clr-black;
+  background: $clr-primary;
+}
+
+*:focus {
+  outline: 2px solid rgba($clr-primary, 0.5);
+  box-shadow: 0 2px 4px 2px rgba(255, 174, 61, 0.3);
 }

@@ -3,49 +3,6 @@
   padding-right: $page-padding;
 }
 
-// STYLING MIXINS
-
-// @mixin colorBackgroundImage(
-//   $imagePath,
-//   $direction,
-//   $color,
-//   $colorIntensity,
-//   $color2Intensity: null,
-//   $color2: null
-// ) {
-//   @if $color2Intensity == null and $color2 == null {
-//     background-image: linear-gradient(
-//         $direction,
-//         rgba($color, $colorIntensity),
-//         rgba($color, $colorIntensity)
-//       ),
-//       url($imagePath);
-//   } @else if $color2 == null {
-//     background-image: linear-gradient(
-//         $direction,
-//         rgba($color, $colorIntensity),
-//         rgba($color, $color2Intensity)
-//       ),
-//       url($imagePath);
-//   } @else {
-//     background-image: linear-gradient(
-//         $direction,
-//         rgba($color, $colorIntensity),
-//         rgba($color2, $color2Intensity)
-//       ),
-//       url($imagePath);
-//   }
-// }
-
-// RESPONSIVE MIXINS
-
-$xs-phone: 0;
-$phone: 480px;
-$tablet: 768px;
-$desktop: 1024px;
-$widescreen: 1216px;
-$fullhd: 1408px;
-
 @mixin small-mobile {
   @media screen and (max-width: $phone - 1px) {
     @content;
@@ -54,6 +11,12 @@ $fullhd: 1408px;
 
 @mixin mobile {
   @media screen and (max-width: $tablet - 1px) {
+    @content;
+  }
+}
+
+@mixin start-on-mobile {
+  @media screen and (min-width: $phone) {
     @content;
   }
 }
@@ -71,7 +34,13 @@ $fullhd: 1408px;
 }
 
 @mixin touch {
-  @media screen and (min-width: $desktop - 1px) {
+  @media screen and (max-width: $desktop - 1px) {
+    @content;
+  }
+}
+
+@mixin touch-only {
+  @media screen and (min-width: $phone) and (max-width: $desktop - 1px) {
     @content;
   }
 }
@@ -104,4 +73,9 @@ $fullhd: 1408px;
   @media screen and (min-width: $fullhd) {
     @content;
   }
+}
+
+@mixin abs-vertical-center {
+  left: 50%;
+  transform: translateX(-50%);
 }

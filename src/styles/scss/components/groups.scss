@@ -1,36 +1,150 @@
-.groups {
+.group {
+  &s {
+    // box-shadow: 0 0 20px 0 rgba(0,0,0, 1);
 
+    &-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-image: linear-gradient(
+          to top,
+          rgba($clr-black, 0.9),
+          rgba($clr-black, 0.9)
+        ),
+        url(../../../assets/images/groups.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      height: 100vh;
+      min-height: 480px;
+      padding: 2.1rem;
+
+      &__scroll {
+        display: flex;
+        justify-content: center;
+        padding: 6px;
+        height: 3.2rem;
+        width: 1.8rem;
+        border: 2px solid $clr-primary;
+        border-radius: 25px;
+        &::before {
+          content: "";
+          display: block;
+          width: 8px;
+          height: 8px;
+          background-color: $clr-primary;
+          border-radius: 50%;
+          animation-name: scroll;
+          animation-duration: 1.2s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease;
+          transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+      }
+
+      p {
+        max-width: 80ch;
+        margin: 0 auto;
+      }
+    }
+
+    &-subtitle {
+      font-size: 3.6rem;
+    }
+  }
+
+  border: 2px solid $clr-primary;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:not(:last-of-type) {
+    margin: 0 0 1.6rem;
+  }
+
+  &:hover &__logo {
+    background-color: $clr-alfaPrimary;
+    border-color: transparent;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 2px solid $clr-alfaPrimary;
+    margin: 0 0 3.2rem;
+
+    @include desktop {
+      height: 12rem;
+      width: 12rem;
+    }
+  }
+
+  &__image {
+    max-height: 48px;
+
+    @include desktop {
+      max-height: 96px;
+    }
+
+    &--choir {
+      transform: translateX(2px);
+    }
+
+    &--kplus {
+      max-height: 4rem;
+
+      @include desktop {
+        max-height: 72px;
+      }
+    }
+
+    &--km {
+      transform: translate(1px, -2px);
+    }
+
+    &--wlda {
+      max-width: 48px;
+      transform: translate(0, 3px);
+
+      @include desktop {
+        max-width: 96px;
+      }
+    }
+  }
+
+  &__box {
+  }
+
+  &__name {
+    margin: 0 0 0.8rem;
+  }
+
+  &__desc {
+    margin: 0 0 1.6rem;
+  }
+
+  &__subtitle {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+    margin: 0 0 0.4rem;
+  }
 }
 
-.group {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-
-	&__subtitle {
-		text-transform: uppercase;
-		font-size: 1.2rem;
-		letter-spacing: 1px;
-	}
-
-	&__icon {
-		height: 48px;
-		width: 48px;
-
-		&-box {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 96px;
-			height: 96px;
-			border-radius: 50%;
-			background-color: $clr-alfaPrimary;
-		}
-
-		path, polygon {
-			fill: $clr-primary;
-		}
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(1.4rem);
   }
 }

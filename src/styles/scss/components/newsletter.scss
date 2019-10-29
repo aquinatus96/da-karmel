@@ -1,0 +1,88 @@
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include desktop {
+    align-items: flex-start;
+  }
+
+  p {
+    @include touch-only {
+      max-width: 45ch;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include touch-only {
+      // padding: 0 5rem;
+      margin: 3.2rem auto 6.4rem;
+      text-align: left;
+    }
+  }
+
+  &__row {
+    &:not(:last-of-type) {
+      margin: 0 0 1.6rem 0;
+    }
+
+    @include small-mobile {
+      text-align: left;
+    }
+
+    &--1 {
+    }
+
+    &--2 {
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: $font-bold;
+    margin: 0 0 0.4rem 0;
+  }
+
+  &__input {
+    padding: 1rem 1.2rem !important;
+    font-size: 1.6rem;
+    border: 2px solid $clr-primary !important;
+    border-radius: 0 !important;
+    color: $clr-primary;
+    width: 100%;
+
+    &::placeholder {
+      color: transparentize($clr-primary, 0.5);
+    }
+
+    // @include desktop {
+    //   width: 80%;
+    // }
+  }
+
+  &__submit {
+    align-self: flex-start;
+  }
+}
+
+#mc_embed_signup {
+  width: 100%;
+
+  form {
+    padding: 0;
+  }
+}
+
+#mc_embed_signup div.mce_inline_error {
+  padding: 1rem !important;
+  margin-top: 8px !important;
+  background-color: rgba(red, 0.1) !important;
+  color: red !important;
+}

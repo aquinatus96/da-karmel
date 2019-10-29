@@ -1,35 +1,93 @@
 .section {
-  &-content {
-    padding: 6.4rem 2rem 4.8rem;
+  &-image {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    filter: drop-shadow(0 1px 1px rgba(13, 13, 13, 0.6))
+      drop-shadow(0 4px 2px rgba(13, 13, 13, 0.333))
+      drop-shadow(0 8px 4px rgba(13, 13, 13, 0.25))
+      drop-shadow(0 16px 8px rgba(13, 13, 13, 0.175))
+      drop-shadow(0 32px 16px rgba(13, 13, 13, 0.125));
+
+    @include touch-only {
+      max-width: 680px;
+    }
+
+    @include desktop {
+      max-width: 900px;
+    }
   }
 
   &-about {
     position: relative;
     background-color: $clr-white;
-    // overflow-y: hidden;
 
-    &__image {
-      position: relative;
-      z-index: 10;
+    @include desktop {
+      text-align: center;
+
+      .section-text {
+        max-width: 85ch;
+        margin: 0 auto;
+        text-align: left;
+      }
+    }
+
+    @include widescreen {
+      padding-bottom: 18rem;
+    }
+
+    &__box {
+      @include widescreen {
+        position: relative;
+        z-index: 12;
+      }
+    }
+
+    .section-image {
+      @include widescreen {
+        position: absolute;
+        bottom: -8rem;
+
+        max-width: 1140px;
+      }
     }
 
     &__deco {
-      @include small-mobile {
-        position: absolute;
-        overflow: hidden;
-        bottom: -3.75rem;
-        left: 0;
-        width: 100%;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 25vh;
+      background-image: url(../../../assets/images/rect2.png);
+      background-size: cover;
 
-        img {
-          max-height: 25vh;
-          width: 200%;
-        }
+      @include small-mobile {
+        bottom: -3.75rem;
+      }
+
+      @include touch {
+        bottom: -3rem;
+      }
+
+      @include desktop {
+        max-width: 80%;
+        height: 20vh;
+        bottom: -2.75rem;
+        @include abs-vertical-center;
+      }
+
+      @include widescreen {
+        background-image: url(../../../assets/images/rect2.png);
+        max-width: 100rem;
+        bottom: -3rem;
+        height: 23vh;
+        background-size: cover;
       }
     }
   }
 
   &-levels {
+    position: relative;
     background-image: linear-gradient(
         to top,
         rgba($clr-black, 0.95),
@@ -39,13 +97,108 @@
     background-size: 300%;
     background-repeat: no-repeat;
     background-position: -25rem 25rem;
+
+    @include mobile {
+      background-size: 150%;
+      background-position: 0 31rem;
+    }
+
+    @include tablet {
+      background-position: 18rem 25rem;
+      background-size: cover;
+    }
+
+    @include desktop {
+      background-position: 30rem 5rem;
+
+      text-align: center;
+
+      .section-text {
+        max-width: 95ch;
+        margin: 0 auto;
+      }
+    }
+
+    &__road {
+      display: none;
+    }
+
+    @include widescreen {
+      background-position-y: 10rem;
+
+      &__road {
+        position: absolute;
+        display: initial;
+        top: 15%;
+
+        &--1 {
+          left: -2rem;
+          transform: rotate(-20deg);
+        }
+
+        &--2 {
+          right: -4.5rem;
+          top: 3.5%;
+          transform: rotate(40deg);
+        }
+      }
+    }
   }
 
   &-meetings {
+    position: relative;
     background-color: $clr-white;
+
+    @include desktop {
+      &__cols {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &__col {
+      &--1 {
+        flex: 1 1 auto;
+        margin: 0 7.2rem 0 0;
+      }
+
+      &--2 {
+        flex: 2 0 25vw;
+      }
+    }
+
+    img {
+      @include desktop {
+        max-width: 600px;
+      }
+    }
+
+    &__deco {
+      position: absolute;
+      overflow: hidden;
+      left: 0;
+      width: 100%;
+      height: 25vh;
+      background-image: url(../../../assets/images/rect2.png);
+      background-size: cover;
+      z-index: 2;
+
+      @include small-mobile {
+        bottom: -3.75rem;
+      }
+
+      @include touch {
+        bottom: -3rem;
+      }
+
+      @include desktop {
+        display: none;
+      }
+    }
   }
 
   &-mass {
+    position: relative;
     background-image: linear-gradient(
         to top,
         rgba($clr-black, 0.5),
@@ -56,12 +209,63 @@
     background-size: cover;
     background-repeat: no-repeat;
 
+    @include desktop {
+      text-align: center;
+
+      .section-text {
+        max-width: 95ch;
+        margin: 0 auto;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+
+      @include desktop {
+        align-items: center;
+      }
+
+      &-box {
+        @include touch-only {
+          span {
+            display: block;
+          }
+        }
+
+        @include desktop {
+          padding: 1rem 3rem;
+          background-color: $clr-alfaPrimary;
+        }
+      }
+    }
+
     &__hours {
       display: flex;
       align-items: baseline;
       text-transform: uppercase;
       letter-spacing: 1px;
       font-size: 1.2rem;
+
+      &:not(:last-of-type) {
+        margin-bottom: 1rem;
+      }
+
+      @include desktop {
+        width: 100%;
+        border-top: 1px solid $clr-alfaPrimary;
+        border-bottom: 1px solid $clr-alfaPrimary;
+        padding: 0.8rem 5rem;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.333rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      @include fullhd {
+        width: 60%;
+      }
     }
 
     &__time {
@@ -69,19 +273,78 @@
       font-size: 3.2rem;
     }
 
-    &__info {
-      display: flex;
-      flex-direction: column;
+    &__deco {
+      position: absolute;
+      overflow: hidden;
+      right: 0;
+      width: 33vw;
+      bottom: -3.75rem;
+      height: 8rem;
+      background-image: url(../../../assets/images/rect1.png);
+      background-size: 600%;
+      background-position: -2% 0;
 
-      &-box span {
-        display: block;
+      @include tablet {
+        width: 25vw;
+      }
+
+      @include desktop {
+        width: 18vw;
+        height: 10rem;
       }
     }
   }
 
   &-groups {
-    &__img {
-      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    position: relative;
+
+    @include desktop {
+      text-align: center;
+
+      .section-text {
+        max-width: 95ch;
+        margin: 0 auto;
+      }
+    }
+
+    &__deco {
+      position: absolute;
+      overflow: hidden;
+      bottom: 2rem;
+      left: 0;
+      width: 100%;
+      background-image: url(../../../assets/images/rect2.png);
+      background-size: cover;
+
+      @include small-mobile {
+        height: 10rem;
+      }
+
+      @include mobile {
+        height: 15rem;
+      }
+
+      @include tablet {
+        height: 20rem;
+        background-size: cover;
+      }
+
+      @include desktop {
+        height: 20rem;
+        width: 80%;
+        bottom: 2rem;
+        @include abs-vertical-center;
+      }
+
+      @include widescreen {
+        bottom: 7rem;
+      }
+    }
+
+    .section-image {
+      @include fullhd {
+        max-width: 1024px;
+      }
     }
   }
 }

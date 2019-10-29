@@ -1,0 +1,34 @@
+.footer {
+  background-color: $clr-white;
+
+  @include touch {
+    text-align: center;
+
+    form {
+      text-align: left;
+    }
+  }
+
+  @include start-on-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+  }
+
+  &__box {
+    @include desktop {
+      display: grid;
+      grid-template-columns: 1fr 450px;
+      grid-gap: 15vw;
+    }
+  }
+
+  h2 {
+    @include desktop {
+      font-size: 2.4rem;
+    }
+  }
+}

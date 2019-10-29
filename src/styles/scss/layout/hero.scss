@@ -1,34 +1,174 @@
 .hero {
-  padding: $page-padding;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   min-height: 480px;
-  display: flex;
-  align-items: center;
+  padding: $small-page-padding;
+  background-image: linear-gradient(
+      to top,
+      rgba($clr-black, 0.9),
+      rgba($clr-black, 0.9)
+    ),
+    url(../../../assets/images/stta.png);
+  background-repeat: no-repeat;
+
+  @include small-mobile {
+    background-size: 375%;
+    background-position: 50% 60%;
+  }
+
+  @include touch {
+    background-size: 300%;
+    background-position: center;
+  }
+
+  @include desktop {
+    background-size: 150%;
+    background-position: 5% 50%;
+  }
+
+  @include widescreen {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    min-height: 100vh;
+    background-image: none;
+  }
+
+  @media screen and (min-width: $widescreen) and (max-height: 900px) {
+    background-image: url(../../../assets/images/stta.png);
+  }
 
   &__content {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative;
+    z-index: 11;
+
+    @include widescreen {
+      align-items: flex-start;
+      text-align: left;
+
+      padding: 0 8rem 12rem 4rem;
+      background-image: radial-gradient(
+        farthest-corner at 180px 217px,
+        rgba(36, 35, 28, 0.95) 40%,
+        rgba(36, 35, 28, 0) 65%
+      );
+    }
   }
 
   &__buttons {
     justify-content: center;
-  }
 
-  @include small-mobile {
-    background-image: linear-gradient(
-        to top,
-        rgba($clr-black, 0.9),
-        rgba($clr-black, 0.9)
-      ),
-      url(../../../assets/images/stta.png);
-    background-size: 300%;
-    background-repeat: no-repeat;
-    background-position: 50% 75%;
+    @include small-mobile {
+      flex-direction: column;
+    }
+
+    @include touch {
+      align-items: center;
+    }
+
+    @include desktop {
+      align-items: center;
+    }
   }
 
   &__heading {
     font-size: 4.8rem;
+
+    @include desktop {
+      font-size: 7.2rem;
+    }
+
+    @include widescreen {
+      font-size: 6.4rem;
+    }
+  }
+
+  p {
+    @include touch-only {
+      max-width: 60ch;
+    }
+
+    @include desktop {
+      max-width: 65ch;
+    }
+  }
+
+  &-image {
+    display: none;
+
+    @include widescreen {
+      display: initial;
+      position: absolute;
+      top: -25rem;
+      right: -18rem;
+      z-index: 10;
+      width: initial;
+    }
+
+    @media screen and (min-width: $widescreen) and (max-height: 900px) {
+      display: none;
+    }
+  }
+
+  &__link {
+    border: 2px solid $clr-primary;
+    width: 64px;
+    height: 64px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -15%;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    i {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      background-color: $clr-primary;
+
+      i {
+        color: $clr-black;
+      }
+    }
+
+    @include widescreen {
+      display: flex;
+    }
+  }
+
+  &__deco {
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+
+    bottom: -11rem;
+
+    background-image: url(../../../assets/images/rect2.png);
+    background-position: 15% -17%;
+    background-size: cover;
+    z-index: 1;
+
+    @include small-mobile {
+      display: none;
+    }
+
+    @include start-on-mobile {
+      display: none;
+    }
+
+    @include widescreen {
+      width: calc(66vw + 50px);
+      height: 24rem;
+      display: block;
+    }
   }
 }

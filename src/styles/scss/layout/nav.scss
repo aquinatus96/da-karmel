@@ -1,0 +1,125 @@
+.nav {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 2.1rem;
+  transition: background-color 0.3s ease, transform 0.1s ease-out;
+
+  @media screen and (max-width: $desktop-menu - 1px) {
+    bottom: 0;
+    background-color: white;
+    // border-top: 2px solid $clr-primary;
+    box-shadow: 0 0 8px 4px rgba($clr-grey, 0.15);
+    // padding: 1.5rem 0.8rem;
+  }
+
+  &--scrolled {
+    background-color: rgba($clr-black, 0.98);
+  }
+
+  &-desktop {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    @media screen and (min-width: $desktop-menu) {
+      display: flex;
+    }
+  }
+
+  &__logo {
+    img {
+      height: 48px;
+      max-width: 54px;
+    }
+  }
+
+  &__right {
+    display: flex;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    margin-right: 1.1rem;
+    transition: transform 0.1s ease-in, background-color 0.1s ease-out;
+    padding: 0.5rem 1rem;
+
+    @include desktop {
+      &:hover {
+        transform: rotate(-4deg);
+        background-color: $clr-alfaPrimary;
+      }
+    }
+  }
+
+  &__link {
+    text-transform: uppercase;
+    font-family: $font-secondary;
+    font-size: 1.2rem;
+  }
+}
+
+.nav-mobile {
+  display: none;
+  transition: opacity 0.3s ease;
+
+  @media screen and (max-width: $desktop-menu - 1px) {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+
+  &__item {
+    position: relative;
+    padding: 0.8rem;
+
+    &--active {
+      &::before {
+        content: "";
+        height: 54px;
+        width: 54px;
+        display: block;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        border-radius: 50%;
+        background-color: $clr-alfaPrimary;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+      }
+    }
+  }
+
+  &__link {
+    @extend .nav__link;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 64px;
+    font-weight: $font-bold;
+
+    &--active {
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &__icon {
+    margin: 0 0 4px;
+
+    img {
+      width: 24px;
+    }
+  }
+}

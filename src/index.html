@@ -11,156 +11,357 @@
     <meta property="og:image" content="" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta name="theme-color" content="#ffae3d">
+    <meta name="msapplication-navbutton-color" content="#ffae3d">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffae3d">
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:700|Ubuntu:700&display=swap&subset=latin-ext"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:700|Ubuntu:700&display=swap&subset=latin-ext"
+    rel="stylesheet"
     />
-    <link rel="shortcut icon" href="images/favicon.ico" />
-    <link rel="stylesheet" href="assets/style.min.css?v=4413" />
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
+    <!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"> -->
     <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-      crossorigin="anonymous"
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Rakkas|Roboto|Roboto+Condensed:400,700&display=swap&subset=latin-ext"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="assets/style.min.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
 
-
   <body>
-    <header class="hero">
-      <div class="hero__content">
-        <span class="subtitle">Duszpasterstwo Akademickie Karmel</span>
-        <h1 class="hero__heading xs-mt-16 xs-mb-16">
-          <span class="sr-only">DA Karmel. </span>Daj się rozpalić!
-        </h1>
-        <p>
-          Jeśli wciąż szukasz swojej duchowej, to nasze duszpasterstwo jest dla
-          Ciebie. Dołącz do nas i rozpal się najwspanialszą duchowością
-          Kościoła.
-        </p>
-
-        <div class="hero__buttons buttons xs-mt-32">
-          <a href="#about" class="button button--primary">Dowiedz się więcej</a>
-          <a href="#calendar" class="button button--secondary xs-mt-24">Najbliższe spotkania</a>
+    <nav class="nav nav--hidden">
+      <div class="nav-desktop">
+        <div class="nav__logo">
+          <a href="/">
+            <img src="assets/images/svg/nav-logo-01.svg" alt="Logo DA Karmel – Kraków">
+          </a>
+        </div>
+        <div class="nav__right">
+          <ul class="nav__box">
+            <li class="nav__item"><a href="./#meetings" class="nav__link">Spotkania</a></li>
+            <li class="nav__item"><a href="./groups/index.html" class="nav__link">Grupy</a></li>
+            <li class="nav__item"><a href="./#calendar" class="nav__link">Kalendarz</a></li>
+          </ul>
+          <a href="./#newsletter" class="button button--primary button--small">Newsletter</a>
         </div>
       </div>
 
-      <!-- <img
-        class="hero__img"
-        src="assets/images/stta.png"
-        alt="Święta Teresa z Avila"
-      /> -->
-    </header>
-    <section class="section section-about">
-      <div class="section-content">
-        <span class="subtitle">O naszym DA</span>
-        <h2 class="xs-mt-16">Wrażliwi na obecność</h2>
-        <p class="xs-mt-16">
-          Jesteśmy wspólnotą studentów, którzy nie boją się rozwijać swojej
-          wrażliwości na obecność Boga w naszym życiu. Dzieląc się swoimi
-          spostrzeżeniami i doświadczeniami, uczymy się od siebie nawzajem,
-          budujemy relacje oraz wspieramy w rozwoju duchowym. Podejmując wysiłek
-          kształtowania swojej duszy sięgamy do niewyczerpanego skarbca, jakim
-          jest duchowość karmelitańska, cechująca się prostotą i szukaniem Boga
-          w zwyczajnym toku dnia codziennego. Stąd duchowość w wydaniu
-          karmelitańskim określa się inaczej „mistyką codzienności”.
-        </p>
+      <ul class="nav-mobile">
+        <li class="nav-mobile__item nav-mobile__item--active"><a href="./" class="nav-mobile__link nav-mobile__link--active"><i class="nav-mobile__icon"><img src="assets/images/svg/nav-logo-01.svg" alt="DA Karmel – Strona Główna"></i>DA Karmel</a></li>
+        <li class="nav-mobile__item"><a href="./groups/index.html" class="nav-mobile__link"><i class="nav-mobile__icon"><img src="assets/images/svg/groups.svg" alt="Grupy"></i>Grupy</a></li>
+        <li class="nav-mobile__item"><a href="./#calendar" class="nav-mobile__link"><i class="nav-mobile__icon"><img style="max-height: 22px" src="assets/images/svg/cal-menu.svg" alt="Kalendarz"></i>Kalendarz</a></li>
+        <li class="nav-mobile__item"><a href="./#newsletter" class="nav-mobile__link"><i class="nav-mobile__icon"><img src="assets/images/svg/newsletter.svg" alt="Newsletter"></i>Newsletter</a></li>
+      </ul>
+    </nav>
+  <header class="hero">
+    <div class="hero__content">
+      <span class="subtitle">Duszpasterstwo Akademickie Karmel</span>
+      <h1 class="hero__heading xs-mt-16 xs-mb-16 lg-mt-48 lg-mb-48">
+        <span class="sr-only">DA Karmel. </span>Daj się rozpalić!
+      </h1>
+      <p>
+        Jeśli wciąż szukasz swojej duchowej, to nasze duszpasterstwo jest dla
+        Ciebie. Dołącz do nas i rozpal się najwspanialszą duchowością
+        Kościoła.
+      </p>
 
-        <div class="section-about__image xs-mt-32">
-          <img src="assets/images/da1-small.png" alt="" />
+      <div class="hero__buttons buttons xs-mt-48 lg-mt-64">
+        <a href="#about" class="button button--primary sm-mr-32 md-mr-48 ws-mr-64">Dowiedz się więcej</a>
+        <a href="#calendar" class="button button--secondary xs-mt-32 sm-mt-0">Najbliższe spotkania</a>
+      </div>
+      <a class="hero__link" href=""><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <div class="hero__deco"></div>
+  </header>
+
+  <img class="hero-image" src="assets/images/stta.png" alt="Święta Teresa z Avila" />
+
+  <main>
+    <section id="about" class="section section-about">
+      <div class="container">
+        <div class="section-about__box">
+          <span class="subtitle">O naszym DA</span>
+          <h2 class="xs-mt-16 lg-mt-24">Wrażliwi na obecność</h2>
+          <p class="section-text xs-mt-16 lg-mt-32">
+            Jesteśmy wspólnotą studentów, którzy nie boją się rozwijać swojej
+            wrażliwości na obecność Boga w naszym życiu. Dzieląc się swoimi
+            spostrzeżeniami i doświadczeniami, uczymy się od siebie nawzajem,
+            budujemy relacje oraz wspieramy w rozwoju duchowym. Podejmując wysiłek
+            kształtowania swojej duszy sięgamy do niewyczerpanego skarbca, jakim
+            jest duchowość karmelitańska, cechująca się prostotą i szukaniem Boga
+            w zwyczajnym toku dnia codziennego. Stąd duchowość w wydaniu
+            karmelitańskim określa się inaczej „mistyką codzienności”.
+          </p>
         </div>
 
-        <div class="section-about__deco">
-          <img src="assets/images/rect1.png" alt="Dekoracja" />
+        <div class="section-image section-about__image xs-mt-48 lg-mt-96">
+          <picture>
+            <source media="(min-width: 1024px)" srcset="assets/images/da1-desktop.png">
+            <source media="(min-width: 480px)" srcset="assets/images/da1-mobile.png">
+            <source srcset="assets/images/da1-sm-mobile.png">
+            <img src="assets/images/da1-mobile.png" alt="Nasze duszpasterstwo">
+          </picture>
         </div>
+
+        <div class="section-about__deco"></div>
     </section>
     <section class="section section-levels">
-      <div class="section-content">
+      <div class="container">
         <span class="subtitle">Dołącz do nas</span>
-        <h2 class="xs-mt-16">Rusz z nami w drogę</h2>
-        <p class="xs-mt-16">
-          Święci Karmelu uczą nas, że w każdej naszej czynności możemy odnaleźć Jego obecność. Centrum naszej duchowości jest
+        <h2 class="xs-mt-16 lg-mt-24">Rusz z nami w drogę</h2>
+        <p class="section-text xs-mt-16 lg-mt-32">
+          Święci Karmelu uczą nas, że w każdej naszej czynności możemy odnaleźć Jego obecność. Centrum naszej duchowości
+          jest
           osobista oraz wspólnotowa modlitwa, która towarzyszy każdemu duszpasterskiemu spotkaniu. Wspólnie przeżywamy i
-          przygotowujemy nasze Msze Święte. Jeśli nigdy nie spotkałeś się z zakonem Karmelitów i duchowością Karmelu, nie bój
+          przygotowujemy nasze Msze Święte. Jeśli nigdy nie spotkałeś się z zakonem Karmelitów i duchowością Karmelu, nie
+          bój
           się,
           my też cały czas się jej uczymy!
         </p>
 
-        <div class="groups xs-mt-64">
-          <div class="group group--1">
-            <div class="group__icon-box">
-              <svg class="group__icon group__icon--1" xmlns="<http://www.w3.org/2000/svg>" viewbox="0 0 250 250" version="1.1">
-              <path d="M69.3 205.2l78.9-64.1 32.5-96.4 -78.9 64.1L69.3 205.2zM114 117.4c3.9-5.6 11.6-7 17.2-3.1 5.6 3.9 7 11.6 3.1 17.2 -3.9 5.6-11.6 7-17.2 3.1C111.5 130.7 110.1 123 114 117.4z"/>
-              <path d="M125 0.4C56.3 0.4 0.4 56.3 0.4 125S56.3 249.6 125 249.6c68.7 0 124.6-55.9 124.6-124.6S193.7 0.4 125 0.4zM226.1 133.8l9.7 4.1c-1.1 9.2-3.3 18.1-6.4 26.5l-11.6-4.8 -2.7 6.5 11.6 4.8c-5.1 11.2-12 21.5-20.4 30.4l-8.8-8.8 -5 5 8.8 8.8c-8.9 8.3-19.1 15.3-30.4 20.4l-4.8-11.5 -6.5 2.7 4.8 11.6c-8.4 3.2-17.3 5.4-26.5 6.4l-4.1-9.7 -8.8-20.5 -8.8 20.5 -4.1 9.7c-9.2-1.1-18.1-3.3-26.5-6.4l4.8-11.6 -6.5-2.7 -4.8 11.5c-11.2-5.1-21.5-12-30.4-20.4l8.8-8.8 -5-5 -8.8 8.8c-8.3-8.9-15.3-19.1-20.4-30.4l11.6-4.8 -2.7-6.5 -11.6 4.8c-3.2-8.4-5.4-17.3-6.4-26.5l9.7-4.1 20.5-8.8 -20.5-8.8 -9.7-4.1c1.1-9.2 3.3-18.1 6.4-26.5l11.6 4.8 2.7-6.5 -11.6-4.8c5.1-11.2 12-21.5 20.4-30.4l8.8 8.8 5-5 -8.8-8.8c8.9-8.3 19.1-15.3 30.4-20.4l4.8 11.5 6.5-2.7 -4.8-11.6c8.4-3.2 17.3-5.4 26.5-6.4l4.1 9.7 8.8 20.5 8.8-20.5 4.1-9.7c9.2 1.1 18.1 3.3 26.5 6.4l-4.8 11.6 6.5 2.7 4.8-11.5c11.2 5.1 21.5 12 30.4 20.4l-8.8 8.8 5 5 8.8-8.8c8.3 8.9 15.3 19.1 20.4 30.4l-11.6 4.8 2.7 6.5 11.6-4.8c3.2 8.4 5.4 17.3 6.4 26.5l-9.7 4.1 -20.5 8.8L226.1 133.8z"/>
-            </svg>
+        <div class="levels xs-mt-64 lg-mt-160">
+          <div class="level level--1">
+            <div class="level__icon-box">
+              <svg class="level__icon level__icon--1" xmlns="<http://www.w3.org/2000/svg>" viewbox="0 0 250 250"
+                version="1.1">
+                <path
+                  d="M69.3 205.2l78.9-64.1 32.5-96.4 -78.9 64.1L69.3 205.2zM114 117.4c3.9-5.6 11.6-7 17.2-3.1 5.6 3.9 7 11.6 3.1 17.2 -3.9 5.6-11.6 7-17.2 3.1C111.5 130.7 110.1 123 114 117.4z" />
+                <path
+                  d="M125 0.4C56.3 0.4 0.4 56.3 0.4 125S56.3 249.6 125 249.6c68.7 0 124.6-55.9 124.6-124.6S193.7 0.4 125 0.4zM226.1 133.8l9.7 4.1c-1.1 9.2-3.3 18.1-6.4 26.5l-11.6-4.8 -2.7 6.5 11.6 4.8c-5.1 11.2-12 21.5-20.4 30.4l-8.8-8.8 -5 5 8.8 8.8c-8.9 8.3-19.1 15.3-30.4 20.4l-4.8-11.5 -6.5 2.7 4.8 11.6c-8.4 3.2-17.3 5.4-26.5 6.4l-4.1-9.7 -8.8-20.5 -8.8 20.5 -4.1 9.7c-9.2-1.1-18.1-3.3-26.5-6.4l4.8-11.6 -6.5-2.7 -4.8 11.5c-11.2-5.1-21.5-12-30.4-20.4l8.8-8.8 -5-5 -8.8 8.8c-8.3-8.9-15.3-19.1-20.4-30.4l11.6-4.8 -2.7-6.5 -11.6 4.8c-3.2-8.4-5.4-17.3-6.4-26.5l9.7-4.1 20.5-8.8 -20.5-8.8 -9.7-4.1c1.1-9.2 3.3-18.1 6.4-26.5l11.6 4.8 2.7-6.5 -11.6-4.8c5.1-11.2 12-21.5 20.4-30.4l8.8 8.8 5-5 -8.8-8.8c8.9-8.3 19.1-15.3 30.4-20.4l4.8 11.5 6.5-2.7 -4.8-11.6c8.4-3.2 17.3-5.4 26.5-6.4l4.1 9.7 8.8 20.5 8.8-20.5 4.1-9.7c9.2 1.1 18.1 3.3 26.5 6.4l-4.8 11.6 6.5 2.7 4.8-11.5c11.2 5.1 21.5 12 30.4 20.4l-8.8 8.8 5 5 8.8-8.8c8.3 8.9 15.3 19.1 20.4 30.4l-11.6 4.8 2.7 6.5 11.6-4.8c3.2 8.4 5.4 17.3 6.4 26.5l-9.7 4.1 -20.5 8.8L226.1 133.8z" />
+              </svg>
             </div>
             <h3 class="xs-mt-8">Przygotowanie</h3>
-            <span class="group__subtitle xs-mt-8">Grupa wprowadzająca w wiarę</span>
-            <p class="xs-mt-8">
+            <span class="level__subtitle xs-mt-8">Grupa wprowadzająca w wiarę</span>
+            <p class="xs-mt-16">
               Zacznij swoją podróż z Bogiem na nowo.
               W tej grupie poznasz treści, które pomogą ci lepiej
               przeżywać oraz rozumieć swoją wiarę.
             </p>
           </div>
 
-          <div class="group group--2 xs-mt-64 xs-mb-32">
-            <div class="group__icon-box">
-              <svg class="group__icon group__icon--2" xmlns="<http://www.w3.org/2000/svg>" viewbox="0 0 222.8 250" version="1.1">
-              <polygon points="222.8 111.7 186.6 76.7 111.4 76.7 111.4 61.7 145.8 61.7 145.8 26.4 111.4 26.4 111.4 0 87.3 0 87.3 26.4 51.8 26.4 33.5 44.1 51.8 61.7 87.3 61.7 87.3 76.7 0 76.7 0 146.7 87.3 146.7 87.3 250 111.4 250 111.4 146.7 186.6 146.7 "/>
-            </svg>
+          <div class="level level--2 xs-mt-64 xs-mb-32 lg-mt-0 lg-mb-0">
+            <div class="level__icon-box">
+              <svg class="level__icon level__icon--2" xmlns="<http://www.w3.org/2000/svg>" viewbox="0 0 222.8 250"
+                version="1.1">
+                <polygon
+                  points="222.8 111.7 186.6 76.7 111.4 76.7 111.4 61.7 145.8 61.7 145.8 26.4 111.4 26.4 111.4 0 87.3 0 87.3 26.4 51.8 26.4 33.5 44.1 51.8 61.7 87.3 61.7 87.3 76.7 0 76.7 0 146.7 87.3 146.7 87.3 250 111.4 250 111.4 146.7 186.6 146.7 " />
+              </svg>
             </div>
             <h3 class="xs-mt-8">Wspinaczka</h3>
-            <span class="group__subtitle xs-mt-8">Grupa pogłębiająca wiarę</span>
-            <p class="xs-mt-8">
+            <span class="level__subtitle xs-mt-8">Grupa pogłębiająca wiarę</span>
+            <p class="xs-mt-16">
               Jeśli czujesz się na siłach możesz ruszyć dalej.
               Teraz prowadzą cię wielcy święci Karmelu i
               nauczysz się żyć duchem karmelitańską.
             </p>
           </div>
+
+        </div>
+        <div class="section-levels__road section-levels__road--1">
+          <img src="assets/images/svg/path1.svg" alt="">
+        </div>
+        <div class="section-levels__road section-levels__road--2">
+          <img src="assets/images/svg/path2.svg" alt="">
         </div>
       </div>
     </section>
     <section class="section section-meetings">
-      <div class="section-content">
-        <span class="subtitle">Formacja i integracja</span>
-        <h2 class="xs-mt-16">Nasze spotkania</h2>
-        <p class="xs-mt-16">
-          Spotkania rozpoczynamy od wspólnej adoracji, w takcie której stajemy w ciszy przed Chrystusem obecnym w Najświętszym Sakramencie. Następna część spotkania odbywa się w podziemiach klasztoru, a jej forma jest zależna od danego tygodnia. Zapraszamy do nas gości, którzy umacniają nas świadectwem spotkania Bogiem. Są to przeróżni ludzie, niekoniecznie będący osobami duchownymi, którzy dzielą się swoim doświadczeniem Boga w swych środowiskach, każdy na swój sposób i odpowiednio do swojej prywatnej historii życiowej.
-        </p>
-        <a href="" class="button button--primary xs-mt-32">Najbliższe spotkania</a>
-      </div>
-      <img src="assets/images/da2-small.png" alt="Nasze spotkania – modlitwa i konferencja" class="xs-mb-32">
-    </section>
-    <section class="section section-mass">
-      <div class="section-content">
-        <span class="subtitle">Chór i eucharystia</span>
-        <h2 class="xs-mt-16">A w niedzielę</h2>
-        <p class="xs-mt-16">
-          Również w niedzielę mamy co robić. Służymy i śpiewamy Bogu podczas liturgii. Ta niedzielna msza święta jest przeznaczona głównie dla studentów i absolwentów. Po niej mamy możliwość spotkania się razem na chwilę rozmowy.
-        </p>
-        <div class="section-mass__info xs-mt-24">
-          <p class="section-mass__hours"><span class="section-mass__time xs-mr-8">16:00</span>Próba chóru</p>
-          <p class="section-mass__hours"><span class="section-mass__time xs-mr-8">18:00</span>Msza święta</p>
-          <p class="section-mass__info-box xs-mt-4">Kościół oo. Karmelitów Bosych, <span>ul. Rakowicka 18</span></p>
+      <div class="container container--wide">
+        <div class="section-meetings__cols">
+          <div class="section-meetings__col section-meetings__col--1">
+            <span class="subtitle">Formacja i integracja</span>
+            <h2 class="xs-mt-16 lg-mt-24">Nasze spotkania</h2>
+            <p class="xs-mt-16 lg-mt-32">
+              Spotkania rozpoczynamy od wspólnej adoracji, w takcie której stajemy w ciszy przed Chrystusem obecnym w
+              Najświętszym Sakramencie. Następna część spotkania odbywa się w podziemiach klasztoru, a jej forma jest
+              zależna od danego tygodnia. Zapraszamy do nas gości, którzy umacniają nas śwsiadectwem spotkania Bogiem. Są to
+              przeróżni ludzie, niekoniecznie będący osobami duchownymi, którzy dzielą się swoim doświadczeniem Boga w swych
+              środowiskach, każdy na swój sposób i odpowiednio do swojej prywatnej historii życiowej.
+            </p>
+            <a href="#calendar" class="button button--primary button--primary-black sm-mr-32 md-mt-48 md-mr-48 ws-mr-64">Najbliższe spotkania</a>
+            <a href="https://drive.google.com/open?id=1I1baRfc7bTb2mT48vVEE0ibRDssEe7ZX" class="button button--secondary xs-mt-32">Materiały formacyjne</a>
+          </div>
+          <div class="section-meetings__col section-meetings__col--2">
+            <img class="section-image xs-mt-96" src="assets/images/da2-mobile.png"
+              alt="Nasze spotkania – modlitwa i konferencja">
+          </div>
+          <div class="section-meetings__deco"></div>
         </div>
       </div>
     </section>
-    <section class="section section-groups">
-      <div class="section-content">
-        <span class="subtitle">Grupy w DA Karmel</span>
-        <h2 class="xs-mt-16">Wybierz sam</h2>
-        <p class="xs-mt-16">
+    <section class="section section-mass">
+      <div class="container">
+        <span class="subtitle">Chór i eucharystia</span>
+        <h2 class="xs-mt-16 lg-mt-24">A w niedzielę</h2>
+        <p class="section-text xs-mt-16 lg-mt-32">
           Również w niedzielę mamy co robić. Służymy i śpiewamy Bogu podczas liturgii. Ta niedzielna msza święta jest
           przeznaczona głównie dla studentów i absolwentów. Po niej mamy możliwość spotkania się razem na chwilę rozmowy.
         </p>
-        <a href="" class="button button--secondary xs-mt-32">Poznaj nasze grupy</a>
-        <img class="section-groups__img xs-mt-48" src="assets/images/gr-small.png" alt="">
+        <div class="section-mass__info xs-mt-32 lg-mt-64">
+          <p class="section-mass__hours"><span class="section-mass__time xs-mr-8">16:00</span>Próba chóru</p>
+          <p class="section-mass__hours"><span class="section-mass__time xs-mr-8">18:00</span>Msza święta</p>
+
+          <p class="section-mass__info-box xs-mt-8 lg-mt-32">Kościół oo. Karmelitów Bosych, <span>ul. Rakowicka 18</span>
+          </p>
+        </div>
       </div>
+      <div class="section-mass__deco"></div>
     </section>
+    <section class="section section-groups">
+      <div class="container">
+        <span class="subtitle">Wybierz sam</span>
+        <h2 class="xs-mt-16 lg-mt-24">Grupy w DA Karmel</h2>
+        <p class="section-text xs-mt-16 lg-mt-32">
+          Również w niedzielę mamy co robić. Służymy i śpiewamy Bogu podczas liturgii. Ta niedzielna msza święta jest
+          przeznaczona głównie dla studentów i absolwentów. Po niej mamy możliwość spotkania się razem na chwilę rozmowy.
+        </p>
+        <a href="/groups.html" class="button button--secondary xs-mt-32 lg-mt-48">Poznaj nasze grupy</a>
+        <div class="section-image section-about__image xs-mt-48 lg-mt-120">
+          <picture>
+            <source media="(min-width: 1024px)" srcset="assets/images/gr-desktop.png">
+            <source media="(min-width: 480px)" srcset="assets/images/gr-tablet.png">
+            <source srcset="assets/images/gr-mobile.png">
+            <img src="assets/images/da1-mobile.png" alt="Grupy DA Karmel">
+          </picture>
+        </div>
+      </div>
+      <div class="section-groups__deco"></div>
+    </section>
+    <div id="calendar" class="container">
+      <span class="subtitle">Kalendarz DA Karmel</span>
+      <h2 class="xs-mt-16">Najbliższe spotkania</h2>
+      <p class="xs-mt-16 xs-mb-32 lg-mb-96">U nas wszystko jest zaplanowane, ale jest miejsce na spotaniczność.</p>
+      <div class="calendars">
+        <div class="calendar__menu">
+          <button id="dak1" class="calendar__menu-item calendar__menu-item--active" data-calendar="dak1">Przygotowanie</button>
+          <button id="dak2" class="calendar__menu-item" data-calendar="dak2">Wędrówka</button>
+          <button id="mek" class="calendar__menu-item" data-calendar="mek">Mężczyźni Karmelu</button>
+        </div>
+
+        <div id="simplebar">
+          <div class="calendar__items" id="calendarContent">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container container--wide">
+      <div class="footer__box">
+          <div id="newsletter" class="newsletter">
+            <h2 class="xs-mb-32">Newsletter</h2>
+            <p>
+              Zapisz się na nasz newsletter i bądź na bieżąco
+              <br>z wszystkimi wydarzeniami w DA Karmel.
+            </p>
+
+            <div class="xs-mt-32 xs-mb-96 lg-mb-0" id="mc_embed_signup">
+              <form action="https://karmel.us12.list-manage.com/subscribe/post?u=6b6f6309fb25670d4f221f973&amp;id=abc00397a9"
+                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+                novalidate>
+                <div id="mc_embed_signup_scroll">
+
+                  <div class="mc-field-group xs-mb-16">
+                    <label class="newsletter__label" for="mce-EMAIL">Adres e-mail <span class="asterisk" style="color: red;">*</span>
+                    </label>
+                    <input type="email" value="" name="EMAIL" placeholder="Podaj swój adres e-mail" class="newsletter__input required email" id="mce-EMAIL">
+                  </div>
+                  <div class="mc-field-group xs-mb-16">
+                    <label class="newsletter__label" for="mce-FNAME">Imię </label>
+                    <input type="text" value="" name="FNAME" placeholder="Podaj swoje imię" class="newsletter__input" id="mce-FNAME">
+                  </div>
+                  <div class="mc-field-group xs-mb-16">
+                    <label class="newsletter__label" for="mce-LNAME">Nazwisko </label>
+                    <input type="text" value="" name="LNAME" placeholder="Podaj swoje nazwisko" class="newsletter__input" id="mce-LNAME">
+                  </div>
+                  <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                  </div>
+                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                      name="b_6b6f6309fb25670d4f221f973_abc00397a9" tabindex="-1" value=""></div>
+                  <div class=" xs-mt-32"><input type="submit" value="Dołącz do newlettera" name="subscribe" id="mc-embedded-subscribe"
+                      class="button button--primary button--primary-black"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div id="contact" class="contacts">
+            <h2 class="xs-mb-32">Kontakt</h2>
+              <div class="contacts__box">
+                <div class="contact">
+                  <div class="contact__image">
+                    <img src="assets/images/obb.png" alt="O. Bartłomiej Kolankiewicz OCD">
+                  </div>
+                  <div class="contact__content">
+                    <p class="contact__desc">Duszpasterz akademicki, kierownictwo duchowe</p>
+                    <p class="contact__name">o. Bartłomiej Kolankiewicz&nbsp;OCD</p>
+                    <p class="contact__details">571270090 / bartekmariaocd@gmail.com</p>
+                    <hr class="xs-mt-16 xs-mb-16 lg-mb-8C">
+                    <p class="contact__desc">Spowiedź (w kaplicy pojednania)</p>
+                    <p class="contact__details">Środa: 15:00-18:00</p>
+                  </div>
+                </div>
+                <div class="contact">
+                  <div class="contact__image">
+                    <img src="assets/images/slw.png" alt="s. dr Lidia Wrona CM">
+                  </div>
+                  <div class="contact__content">
+                    <p class="contact__desc">Porady duchowe</p>
+                    <p class="contact__name">s. dr Lidia Wrona CM</p>
+                    <p class="contact__details">spotkanie.cm@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="copyrights">
+    <div class="copyrights__texts">
+      <p class="copyrights__text">© 2019. Duszpasterstwo Akademickie Karmel.</p>
+      <p class="copyrights__text">Projekt: Tomasz Kumięga</p>
+    </div>
+      <a class="copyrights__link" href=""><i class="fab fa-facebook-f"></i></a>
+  </div>
+
+  <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+  <script type='text/javascript'>(function ($) {
+    window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; /*
+    * Translated default messages for the $ validation plugin.
+    * Locale: PL
+    */
+      $.extend($.validator.messages, {
+        required: "To pole jest wymagane.",
+        remote: "Proszę o wypełnienie tego pola.",
+        email: "Proszę o podanie prawidłowego adresu email.",
+        url: "Proszę o podanie prawidłowego URL.",
+        date: "Proszę o podanie prawidłowej daty.",
+        dateISO: "Proszę o podanie prawidłowej daty (ISO).",
+        number: "Proszę o podanie prawidłowej liczby.",
+        digits: "Proszę o podanie samych cyfr.",
+        creditcard: "Proszę o podanie prawidłowej karty kredytowej.",
+        equalTo: "Proszę o podanie tej samej wartości ponownie.",
+        accept: "Proszę o podanie wartości z prawidłowym rozszerzeniem.",
+        maxlength: $.validator.format("Proszę o podanie nie więcej niż {0} znaków."),
+        minlength: $.validator.format("Proszę o podanie przynajmniej {0} znaków."),
+        rangelength: $.validator.format("Proszę o podanie wartości o długości od {0} do {1} znaków."),
+        range: $.validator.format("Proszę o podanie wartości z przedziału od {0} do {1}."),
+        max: $.validator.format("Proszę o podanie wartości mniejszej bądź równej {0}."),
+        min: $.validator.format("Proszę o podanie wartości większej bądź równej {0}.")
+      });
+    }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
+  <!--End mc_embed_signup-->
+
+    <script src="https://apis.google.com/js/api.js"></script>
   </body>
 </html>

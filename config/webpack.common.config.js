@@ -5,10 +5,13 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    index: "./src/index.js",
+    groups: "./src/groups/index.js"
+  },
 
   output: {
-    filename: "main.js",
+    filename: "[name].[hash:8].js",
     path: path.resolve(__dirname, "../dist")
   },
 
@@ -64,15 +67,14 @@ module.exports = {
     ]
   },
   devServer: {
-      inline: true,
-      host: "192.168.43.52" /* my own IP */,
-      port: 2137 /* number not string */,
-      contentBase: "/",
-      overlay: {
-          warnings: true,
-          errors: true
-      },
-      clientLogLevel: "error"
+    inline: true,
+    host: "192.168.43.52" /* my own IP */,
+    port: 2136 /* number not string */,
+    overlay: {
+      warnings: true,
+      errors: true
+    },
+    clientLogLevel: "error"
   },
 
   //  devServer: {
@@ -87,13 +89,26 @@ module.exports = {
       title: "DA Karmel – Duszpasterstwo Akademickie",
       template: "./src/index.html",
       inject: true,
+      chunk: ["index"],
+      filename: "index.html",
+      minify: {
+        removeComments: true,
+        collapseWhitespace: false
+      }
+    }),
+    new HtmlWebpackPlugin({
+      title: "DA Karmel – Duszpasterstwo Akademickie",
+      template: "./src/groups/index.html",
+      inject: true,
+      chunk: ["groups"],
+      filename: "groups/index.html",
       minify: {
         removeComments: true,
         collapseWhitespace: false
       }
     }),
     new MiniCssExtractPlugin({
-      filename: "style.css"
+      filename: "style.[hash:8].css"
     }),
     new CopyWebpackPlugin([
       {

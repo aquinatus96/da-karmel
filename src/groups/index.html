@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="theme-color" content="#ffae3d" />
+    <meta name="msapplication-navbutton-color" content="#ffae3d" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffae3d" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,600|Roboto:700|Ubuntu:700&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="assets/style.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/simplebar@latest/dist/simplebar.css"
+    />
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+
+  <body>
+    <nav class="nav nav--hidden">
+      <div class="nav-desktop">
+        <div class="nav__logo">
+          <a href="/">
+            <img
+              src="../assets/images/svg/nav-logo-01.svg"
+              alt="Logo DA Karmel – Kraków"
+            />
+          </a>
+        </div>
+        <div class="nav__right">
+          <ul class="nav__box">
+            <li class="nav__item">
+              <a href="./../#meetings" class="nav__link">Spotkania</a>
+            </li>
+            <li class="nav__item">
+              <a href="./../groups/" class="nav__link">Grupy</a>
+            </li>
+            <li class="nav__item">
+              <a href="./../#calendar" class="nav__link">Kalendarz</a>
+            </li>
+          </ul>
+          <a
+            href="./../#newsletter"
+            class="button button--primary button--small"
+            >Newsletter</a
+          >
+        </div>
+      </div>
+
+      <ul class="nav-mobile">
+        <li class="nav-mobile__item">
+          <a href="./" class="nav-mobile__link nav-mobile__link--active"
+            ><i class="nav-mobile__icon"
+              ><img
+                src="../assets/images/svg/nav-logo-01.svg"
+                alt="DA Karmel – Strona Główna"/></i
+            >DA Karmel</a
+          >
+        </li>
+        <li class="nav-mobile__item nav-mobile__item--active">
+          <a href="./groups/index.html" class="nav-mobile__link"
+            ><i class="nav-mobile__icon"
+              ><img src="../assets/images/svg/groups.svg" alt="Grupy"/></i
+            >Grupy</a
+          >
+        </li>
+        <li class="nav-mobile__item">
+          <a href="./#calendar" class="nav-mobile__link"
+            ><i class="nav-mobile__icon"
+              ><img
+                style="max-height: 22px"
+                src="../assets/images/svg/cal-menu.svg"
+                alt="Kalendarz"/></i
+            >Kalendarz</a
+          >
+        </li>
+        <li class="nav-mobile__item">
+          <a href="./#newsletter" class="nav-mobile__link"
+            ><i class="nav-mobile__icon"
+              ><img
+                src="../assets/images/svg/newsletter.svg"
+                alt="Newsletter"/></i
+            >Newsletter</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <header class="groups-header">
+      <span class="subtitle">Wybierz sam</span>
+      <h1 class="groups-subtitle xs-mt-16 lg-mt-24">Grupy w DA Karmel</h1>
+      <p class="section-text xs-mt-16 lg-mt-32">
+        Również w niedzielę mamy co robić. Służymy i śpiewamy Bogu podczas
+        liturgii. Ta niedzielna msza święta jest przeznaczona głównie dla
+        studentów i absolwentów. Po niej mamy możliwość spotkania się razem na
+        chwilę rozmowy.
+      </p>
+
+      <span class="group__subtitle xs-mt-64">Scrolluj</span>
+      <div class="groups-header__scroll"></div>
+    </header>
+    <main class="container groups">
+      <div class="group">
+        <div class="group__logo lg-mb-64">
+          <img
+            class="group__image group__image--choir"
+            src="../assets/images/svg/cda.svg"
+            alt="Chór DA Karmel"
+          />
+        </div>
+        <div class="group__box">
+          <h3 class="group__name">Chór DA</h3>
+          <p class="group__desc">
+            Jesteśmy grupą studentów i absolwentów, która lubi muzykę. Swoim
+            śpiewem ubogacamy liturgię niedzielnej akademickiej Mszy Świętej,
+            ale również inne wydarzenia w Duszpasterstwie i nie tylko. Nasze
+            umiejętności rozwijamy podczas wyjazdów warsztatowych gwarantujących
+            dobrą zabawę.
+          </p>
+          <span class="group__subtitle">Wiek</span>
+          <p class="has-text-bold">19+</p>
+          <hr />
+          <span class="group__subtitle">Kiedy?</span>
+          <p class="has-text-bold">Niedziela, 16:00</p>
+          <hr />
+          <span class="group__subtitle">Kontakt</span>
+          <p class="has-text-bold">
+            br. Marcin Wojnicki OCD<br />
+            wojnicki.marcin@gmail.com
+          </p>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group__logo lg-mb-64">
+          <img
+            class="group__image group__image--kplus"
+            src="../assets/images/svg/kplus.svg"
+            alt="Karmel+"
+          />
+        </div>
+        <div class="group__box">
+          <h3 class="group__name">Karmel+</h3>
+          <p class="group__desc">
+            Karmel+ to przestrzeń dla absolwentów. Dzielenimy się Słowem Bożym i
+            swoją codziennością. Rozmawiamy na ważne dla nas tematy. Wszystko po
+            to, by coraz odważnej ewangelizować, gdziekolwiek i kogokolwiek.
+            Wzajemne wsparcie wypróbowanych przyjaciół jest w tym nieodzowne!
+          </p>
+          <span class="group__subtitle">Wiek</span>
+          <p class="has-text-bold">24-35 lat</p>
+          <hr />
+          <span class="group__subtitle">Kiedy?</span>
+          <p class="has-text-bold">Czwartek, 19:00</p>
+          <hr />
+          <span class="group__subtitle">Kontakt</span>
+          <p class="has-text-bold">
+            Michał Knut<br />
+            knut.michal@gmail.com
+          </p>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group__logo lg-mb-64">
+          <img
+            class="group__image"
+            src="../assets/images/svg/mek.svg"
+            alt="Mężczyźni Karmelu"
+          />
+        </div>
+        <div class="group__box">
+          <h3 class="group__name">Mężczyźni Karmelu</h3>
+          <p class="group__desc">
+            To grupa skierowana wyłącznie do mężczyzn. Tworzymy wspólnotę, która
+            uczy się dojrzałego, odpowiedzialnego podejścia do męskości. Cenimy
+            sobie nasze wartości.
+          </p>
+          <span class="group__subtitle">Wiek</span>
+          <p class="has-text-bold">19-35 lat</p>
+          <hr />
+          <span class="group__subtitle">Kiedy?</span>
+          <p class="has-text-bold">
+            Wybrane <a href="/#calendar">poniedziałki</a>, 19:00
+          </p>
+          <hr />
+          <span class="group__subtitle">Kontakt</span>
+          <p class="has-text-bold">
+            Tomasz Kumięga<br />
+            mezczyzni.karmelu@gmail.com
+          </p>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group__logo lg-mb-64">
+          <img
+            class="group__image group__image--km"
+            src="../assets/images/svg/km.svg"
+            alt="Kuźnia Miłości"
+          />
+        </div>
+        <div class="group__box">
+          <h3 class="group__name">Kuźnia Miłości</h3>
+          <p class="group__desc">
+            W naszej „Kuźni Miłości” skupiamy się na wspólnej pracy nad jakością
+            relacji z Bogiem, relacją w małżeństwie, z dziećmi i innymi ludźmi.
+            Jest to miejsce zarówno dla młodych małżeństw jak i już rodzin z
+            malutkimi dziećmi.
+          </p>
+          <span class="group__subtitle">Kiedy?</span>
+          <p class="has-text-bold">Niedziela, 16:00</p>
+          <hr />
+          <span class="group__subtitle">Kontakt</span>
+          <p class="has-text-bold">
+            Piotr Jedliński<br />
+            piotr.jedlinski@gmail.com
+          </p>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group__logo lg-mb-64">
+          <img
+            class="group__image group__image--wlda"
+            src="../assets/images/wlda.png"
+            alt="Wolontariat DA Karmel"
+          />
+        </div>
+        <div class="group__box">
+          <h3 class="group__name">Wolontariat DA Karmel</h3>
+          <p class="group__desc">
+            Jesteśmy grupą studentów i absolwentów, która lubi muzykę. Swoim
+            śpiewem ubogacamy liturgię niedzielnej akademickiej Mszy Świętej,
+            ale również inne wydarzenia w Duszpasterstwie i nie tylko. Nasze
+            umiejętności rozwijamy podczas wyjazdów warsztatowych gwarantujących
+            dobrą zabawę.
+          </p>
+          <span class="group__subtitle">Kiedy?</span>
+          <p class="has-text-bold">Niedziela, 16:00</p>
+          <hr />
+          <span class="group__subtitle">Wolontariaty</span>
+          <p class="has-text-bold">
+            <a
+              href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQFUAQnAESkBbmwJq5J0d-qEN7kOWiBAsEZaw1ZSK84_bBkbfJE9Dl-Kc2t193P9YN_pEX8-6vIfWgF/pubhtml?gid=0&single=true"
+              >Sprawdź listę wolontariatów</a
+            >
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <div class="copyrights copyrights--groups">
+      <div class="copyrights__texts">
+        <p class="copyrights__text">
+          © 2019. Duszpasterstwo Akademickie Karmel.
+        </p>
+        <p class="copyrights__text">Projekt: Tomasz Kumięga</p>
+      </div>
+      <a class="copyrights__link" href=""><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
