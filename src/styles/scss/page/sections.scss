@@ -158,6 +158,10 @@
 
     &__col {
       &--1 {
+        @include touch {
+          margin: 0;
+        }
+
         flex: 1 1 auto;
         margin: 0 7.2rem 0 0;
       }

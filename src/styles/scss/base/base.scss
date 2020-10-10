@@ -31,7 +31,7 @@ img {
 // }
 
 hr {
-  margin: 0.8rem 0;
+  margin: 2.4rem 0;
   color: $clr-alfaPrimary;
   width: 80%;
 }
@@ -50,4 +50,40 @@ hr {
 *:focus {
   outline: 2px solid rgba($clr-primary, 0.5);
   box-shadow: 0 2px 4px 2px rgba(255, 174, 61, 0.3);
+}
+
+.link {
+  display: inline-block;
+  position: relative;
+  font-weight: normal;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: $clr-primary;
+    position: absolute;
+    bottom: -10px;
+    transition: transform 0.2s ease;
+  }
+
+  &--small {
+    &::before {
+      height: 2px;
+      bottom: -10px;
+    }
+
+    @include desktop {
+      &:hover::before {
+        transform: translateY(-0.2rem) rotate(-2deg) scaleX(0.8);
+      }
+    }
+
+    @include desktop {
+      &:hover::before {
+        transform: translateY(-0.4rem) rotate(-2deg) scaleX(0.8);
+      }
+    }
+  }
 }

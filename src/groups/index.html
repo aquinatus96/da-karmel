@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="" />
+    <meta property="og:url" content="http://da.karmel.pl" />
+    <meta property="og:title" content="Daj się rozpalić – DA Karmel w Krakowie" />
+    <meta property="og:description" content="Jeśli wciąż szukasz swojej duchowej, to nasze duszpasterstwo jest dla Ciebie. Dołącz do nas i rozpal się najwspanialszą duchowością Kościoła." />
+    <meta property="og:image" content="http://da.karmel.pl/og.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="theme-color" content="#ffae3d" />
@@ -39,7 +39,7 @@
     <nav class="nav nav--hidden">
       <div class="nav-desktop">
         <div class="nav__logo">
-          <a href="/">
+          <a href="./../">
             <img
               src="../assets/images/svg/nav-logo-01.svg"
               alt="Logo DA Karmel – Kraków"
@@ -58,9 +58,7 @@
               <a href="./../#calendar" class="nav__link">Kalendarz</a>
             </li>
           </ul>
-          <a
-            href="./../#newsletter"
-            class="button button--primary button--small"
+          <a href="./../#newsletter" class="button button--primary button--small"
             >Newsletter</a
           >
         </div>
@@ -68,7 +66,7 @@
 
       <ul class="nav-mobile">
         <li class="nav-mobile__item">
-          <a href="./" class="nav-mobile__link nav-mobile__link--active"
+          <a href="./../" class="nav-mobile__link nav-mobile__link--active"
             ><i class="nav-mobile__icon"
               ><img
                 src="../assets/images/svg/nav-logo-01.svg"
@@ -77,14 +75,14 @@
           >
         </li>
         <li class="nav-mobile__item nav-mobile__item--active">
-          <a href="./groups/index.html" class="nav-mobile__link"
+          <a href="./../groups/index.html" class="nav-mobile__link"
             ><i class="nav-mobile__icon"
               ><img src="../assets/images/svg/groups.svg" alt="Grupy"/></i
             >Grupy</a
           >
         </li>
         <li class="nav-mobile__item">
-          <a href="./#calendar" class="nav-mobile__link"
+          <a href="./../#calendar" class="nav-mobile__link"
             ><i class="nav-mobile__icon"
               ><img
                 style="max-height: 22px"
@@ -94,7 +92,7 @@
           >
         </li>
         <li class="nav-mobile__item">
-          <a href="./#newsletter" class="nav-mobile__link"
+          <a href="./../#newsletter" class="nav-mobile__link"
             ><i class="nav-mobile__icon"
               ><img
                 src="../assets/images/svg/newsletter.svg"
@@ -145,7 +143,11 @@
           <span class="group__subtitle">Kontakt</span>
           <p class="has-text-bold">
             br. Marcin Wojnicki OCD<br />
-            wojnicki.marcin@gmail.com
+            <a
+              class="link"
+              href="mailto:wojnicki.marcin@gmail.com?subject=Spotkanie Chóru DA Karmel"
+              >wojnicki.marcin@gmail.com</a
+            >
           </p>
         </div>
       </div>
@@ -198,13 +200,20 @@
           <hr />
           <span class="group__subtitle">Kiedy?</span>
           <p class="has-text-bold">
-            Wybrane <a href="/#calendar">poniedziałki</a>, 19:00
+            <a class="link" href="/#calendar"
+              >Wybrane poniedziałki, 19:00
+              <i class="fas fa-calendar-day xs-ml-8"></i
+            ></a>
           </p>
           <hr />
           <span class="group__subtitle">Kontakt</span>
           <p class="has-text-bold">
             Tomasz Kumięga<br />
-            mezczyzni.karmelu@gmail.com
+            <a
+              class="link"
+              href="mailto:mezczyzni.karmelu@gmail.com?subject=Informacja o grupie Mężczyzn Karmelu"
+              >mezczyzni.karmelu@gmail.com</a
+            >
           </p>
         </div>
       </div>
@@ -230,7 +239,11 @@
           <span class="group__subtitle">Kontakt</span>
           <p class="has-text-bold">
             Piotr Jedliński<br />
-            piotr.jedlinski@gmail.com
+            <a
+              class="link"
+              href="mailto:piotr.jedlinski@gmail.com?subject=Spotkania Kuźni Miłości"
+              >piotr.jedlinski@gmail.com</a
+            >
           </p>
         </div>
       </div>
@@ -257,6 +270,7 @@
           <span class="group__subtitle">Wolontariaty</span>
           <p class="has-text-bold">
             <a
+              class="link"
               href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQFUAQnAESkBbmwJq5J0d-qEN7kOWiBAsEZaw1ZSK84_bBkbfJE9Dl-Kc2t193P9YN_pEX8-6vIfWgF/pubhtml?gid=0&single=true"
               >Sprawdź listę wolontariatów</a
             >
@@ -270,9 +284,14 @@
         <p class="copyrights__text">
           © 2019. Duszpasterstwo Akademickie Karmel.
         </p>
-        <p class="copyrights__text">Projekt: Tomasz Kumięga</p>
+        <p class="copyrights__text">
+          Projekt:
+          <a class="link link--small" href="https://behance.net/tkumiega"
+            >Tomasz Kumięga</a
+          >
+        </p>
       </div>
-      <a class="copyrights__link" href=""><i class="fab fa-facebook-f"></i></a>
+      <a class="copyrights__link" href="https://www.facebook.com/DaKarmel"><i class="fab fa-facebook-f"></i></a>
     </div>
     <script src="index.js"></script>
   </body>

@@ -144,7 +144,7 @@ function getFormatedObjArray({ result: { items } }) {
     }
 
     if (eventLocation === undefined) {
-      eventLocation = "Podziemia DA";
+      eventLocation = "Spotkanie online";
     }
 
     events.push({
@@ -165,18 +165,19 @@ function getFormatedObjArray({ result: { items } }) {
 let btn1 = document.querySelector("#mek");
 let btn2 = document.querySelector("#dak1");
 let btn3 = document.querySelector("#dak2");
+let btn4 = document.querySelector("#kplus");
 
 btn1.addEventListener("click", e => {
   getCalIDKey(e, calID);
-  // activateTab(e);
 });
 btn2.addEventListener("click", e => {
   getCalIDKey(e, calID);
-  // activateTab(e);
 });
 btn3.addEventListener("click", e => {
   getCalIDKey(e, calID);
-  // activateTab(e);
+});
+btn4.addEventListener("click", e => {
+  getCalIDKey(e, calID);
 });
 
 const eventProps = {

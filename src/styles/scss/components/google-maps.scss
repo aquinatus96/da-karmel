@@ -1,0 +1,85 @@
+.googlemap {
+  position: relative;
+  // padding-bottom: 56.25%; /* 4:3 ratio*/
+  // height: 0;
+  height: 66vh;
+  overflow: hidden;
+
+  & iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  &-container {
+    position: relative;
+  }
+
+  &__info {
+    @include touch {
+      display: none;
+    }
+
+    @include small-mobile {
+      display: none;
+    }
+
+    @include desktop {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      background-color: rgba($clr-black, 0.8);
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      opacity: 1;
+      z-index: 10;
+      transition: opacity 0.25s ease;
+      text-align: center;
+    }
+
+    &--map-enabled {
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  &__close {
+    @include touch {
+      display: none;
+    }
+
+    @include small-mobile {
+      display: none;
+    }
+
+    @include desktop {
+      position: absolute;
+      display: flex;
+      bottom: top;
+      left: 50%;
+      padding: 1rem 2rem;
+      background-color: $clr-primary;
+      font-weight: bold;
+      color: $clr-black;
+      z-index: 9;
+      font-size: 1.333rem;
+      cursor: pointer;
+      transform: translateX(-50%);
+
+      &::before {
+        content: "🡰";
+        transform: translateX(-4px);
+        display: flex;
+      }
+
+      &:hover::before {
+        transform: translateX(-8px);
+      }
+    }
+  }
+}

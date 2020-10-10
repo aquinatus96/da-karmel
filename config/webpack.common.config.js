@@ -66,16 +66,16 @@ module.exports = {
       }
     ]
   },
-  devServer: {
-    inline: true,
-    host: "192.168.43.52" /* my own IP */,
-    port: 2136 /* number not string */,
-    overlay: {
-      warnings: true,
-      errors: true
-    },
-    clientLogLevel: "error"
-  },
+  // devServer: {
+  //   inline: true,
+  //   host: "192.168.43.52" /* my own IP */,
+  //   port: 2136 /* number not string */,
+  //   overlay: {
+  //     warnings: true,
+  //     errors: true
+  //   },
+  //   clientLogLevel: "error"
+  // },
 
   //  devServer: {
   //      headers: {
